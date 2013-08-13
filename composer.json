@@ -1,0 +1,21 @@
+{
+    "name": "hinablue/oauth-flickr",
+    "description": "OAuth library depends on Lusitanian/PHPoAuthLib",
+    "keywords": ["oauth", "authentication", "authorization", "security", "flickr"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hina Chen",
+            "email": "hinablue@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "lusitanian/oauth": "1.*@dev"
+    },
+    "autoload": {
+        "psr-0": { 
+            "OAuth\\OAuth1\\Service\\Flickr": "src"
+        }
+    }
+}
