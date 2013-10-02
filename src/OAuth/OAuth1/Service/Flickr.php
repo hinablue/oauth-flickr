@@ -77,4 +77,8 @@ class Flickr extends AbstractService
         return $token;
     }
 
+    protected function getExtraOAuthHeaders()
+    {
+        return array('Content-length' => 0);
+    }
 }
