@@ -17,6 +17,8 @@ use OAuth\Common\Http\Client\ClientInterface;
 
 class Flickr extends AbstractService
 {
+    protected $extraHeaders = array();
+
     public function __construct(Credentials $credentials, ClientInterface $httpClient, TokenStorageInterface $storage, SignatureInterface $signature, UriInterface $baseApiUri = null)
     {
         parent::__construct($credentials, $httpClient, $storage, $signature, $baseApiUri);
@@ -77,8 +79,17 @@ class Flickr extends AbstractService
         return $token;
     }
 
+    public function setExtraHeaders( array $extraHeaders ) {
+        $this->extraHeaders = $extraHeaders;
+    }
+
+    protected function getExtraHeaders() {
+        return $this->extraHeaders;
+    }
+
     protected function getExtraOAuthHeaders()
     {
-        return array('Content-length' => 0);
+        return $this->getExtraHeaders();
     }
+
 }
